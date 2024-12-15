@@ -1,5 +1,5 @@
 {
-  "name": "vue2-daterange-picker",
+  "name": "vue2-ez-daterange-picker",
   "version": "0.6.7",
   "description": "Vue2 date range picker based on https://github.com/dangrossman/bootstrap-daterangepicker (no jQuery)",
   "author": "Nikola Kostadinov <nikolakk@gmail.com>",
