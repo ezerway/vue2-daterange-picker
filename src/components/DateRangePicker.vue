@@ -647,12 +647,12 @@ export default {
         this.togglePicker(false, true)
       }
     },
-    onSelect () {
+    onSelect (isClickRange = false) {
       /**
        * Emits when the user selects a range from the picker.
        * @param {json} value - json object containing the dates: {startDate, endDate}
        */
-      this.$emit('select', {startDate: this.start, endDate: this.end})
+      this.$emit('select', {startDate: this.start, endDate: this.end, isClickRange})
     },
     clickAway ($event) {
       if ($event && $event.target &&
@@ -684,7 +684,7 @@ export default {
         this.end = null
       }
 
-      this.onSelect();
+      this.onSelect(true);
 
       if (this.autoApply)
         this.clickedApply()
