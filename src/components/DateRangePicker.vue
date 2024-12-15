@@ -623,7 +623,7 @@ export default {
         this.$emit('toggle', this.open, this.togglePicker)
 
     },
-    clickedApply () {
+    clickedApply (isClickRange = false) {
       // this.open = false
       this.togglePicker(false, true)
       /**
@@ -632,7 +632,8 @@ export default {
        */
       this.$emit('update', {
         startDate: this.start,
-        endDate: this.singleDatePicker && this.singleDatePicker !== 'range' ? this.start : this.end
+        endDate: this.singleDatePicker && this.singleDatePicker !== 'range' ? this.start : this.end,
+        isClickRange
       })
     },
     clickCancel () {
@@ -687,7 +688,7 @@ export default {
       this.onSelect(true);
 
       if (this.autoApply)
-        this.clickedApply()
+        this.clickedApply(true)
     },
     onUpdateStartTime (value) {
       let start = new Date(this.start);
